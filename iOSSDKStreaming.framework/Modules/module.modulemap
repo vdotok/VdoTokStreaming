@@ -1,0 +1,11 @@
+framework module iOSSDKStreaming {
+  umbrella header "iOSSDKStreaming.h"
+
+  export *
+  module * { export * }
+}
+
+module iOSSDKStreaming.Swift {
+    header "iOSSDKStreaming-Swift.h"
+    requires objc
+}
