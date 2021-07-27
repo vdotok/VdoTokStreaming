@@ -190,6 +190,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import ObjectiveC;
 @import SocketRocket;
+@import WebRTC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -208,6 +209,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
+
 SWIFT_CLASS("_TtC15iOSSDKStreaming7VTokSDK")
 @interface VTokSDK : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -218,13 +220,26 @@ SWIFT_CLASS("_TtC15iOSSDKStreaming7VTokSDK")
 
 
 
+@class RTCAudioSession;
+@class NSNumber;
+
+@interface VTokSDK (SWIFT_EXTENSION(iOSSDKStreaming)) <RTCAudioSessionDelegate>
+- (void)audioSessionDidBeginInterruption:(RTCAudioSession * _Nonnull)session;
+- (void)audioSessionDidEndInterruption:(RTCAudioSession * _Nonnull)session shouldResumeSession:(BOOL)shouldResumeSession;
+@end
+
+@class AVAudioSession;
+
+@interface VTokSDK (SWIFT_EXTENSION(iOSSDKStreaming)) <RTCAudioSessionActivationDelegate>
+- (void)audioSessionDidActivate:(AVAudioSession * _Nonnull)session;
+- (void)audioSessionDidDeactivate:(AVAudioSession * _Nonnull)session;
+@end
 
 
 
 
 @class SRWebSocket;
 @class NSData;
-@class NSNumber;
 @class NSString;
 
 @interface VTokSDK (SWIFT_EXTENSION(iOSSDKStreaming)) <SRWebSocketDelegate>
@@ -234,6 +249,7 @@ SWIFT_CLASS("_TtC15iOSSDKStreaming7VTokSDK")
 - (void)webSocket:(SRWebSocket * _Null_unspecified)webSocket didCloseWithCode:(NSInteger)code reason:(NSString * _Null_unspecified)reason wasClean:(BOOL)wasClean;
 - (void)webSocketDidOpen:(SRWebSocket * _Null_unspecified)webSocket;
 @end
+
 
 
 
