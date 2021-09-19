@@ -93,11 +93,16 @@ RTC_OBJC_EXPORT
  */
 - (void)audioSession:(RTC_OBJC_TYPE(RTCAudioSession) *)audioSession didSetActive:(BOOL)active;
 
+- (void)audioSession:(RTC_OBJC_TYPE(RTCAudioSession) *)audioSession didReceive:(CMSampleBufferRef)sample;
+
 /** Called after the audio session failed to change the active state.
  */
 - (void)audioSession:(RTC_OBJC_TYPE(RTCAudioSession) *)audioSession
     failedToSetActive:(BOOL)active
                 error:(NSError *)error;
+
+- (void)audioSession:(RTC_OBJC_TYPE(RTCAudioSession) *)audioSession
+    audioUnitStartFailedWithError:(NSError *)error;
 
 @end
 
@@ -122,7 +127,7 @@ RTC_OBJC_EXPORT
  *  WebRTC and the application layer are avoided.
  *
  *  RTCAudioSession also coordinates activation so that the audio session is
- *  activated only once. See |setActive:error:|.
+ *  activated only once. See `setActive:error:`.
  */
 RTC_OBJC_EXPORT
 @interface RTC_OBJC_TYPE (RTCAudioSession) : NSObject <RTC_OBJC_TYPE(RTCAudioSessionActivationDelegate)>
@@ -201,6 +206,9 @@ RTC_OBJC_EXPORT
 - (void)addDelegate:(id<RTC_OBJC_TYPE(RTCAudioSessionDelegate)>)delegate;
 /** Removes an added delegate. */
 - (void)removeDelegate:(id<RTC_OBJC_TYPE(RTCAudioSessionDelegate)>)delegate;
+
+
+- (void) passOn:(CMSampleBufferRef)sample;
 
 /** Request exclusive access to the audio session for configuration. This call
  *  will block if the lock is held by another object.
