@@ -3,6 +3,7 @@
 //  VdoTokSDK
 //
 //  Created by usama farooq on 18/02/2021.
+//  Copyright © 2021 VDOTOK. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
