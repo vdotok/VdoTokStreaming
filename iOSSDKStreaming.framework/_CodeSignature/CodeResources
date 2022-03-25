@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/iOSSDKStreaming-Swift.h</key>
 		<data>
-		USsb3IatSAQ0ROy5ewZ0Ec7vR50=
+		n7uMerrkUWws1UyJyzQl48N0RSE=
 		</data>
 		<key>Headers/iOSSDKStreaming.h</key>
 		<data>
@@ -18,31 +18,19 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		OfVUXmM+3Xn1UozjYFkWWR00bX0=
+		TKNDHZHk3rlnkMLrLSvxiLiKaA8=
 		</data>
 		<key>Modules/iOSSDKStreaming.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		Yt0PgQ4zebqXuxjzrJV/etVGqe0=
-		</data>
-		<key>Modules/iOSSDKStreaming.swiftmodule/Project/arm64.swiftsourceinfo</key>
-		<data>
-		Yt0PgQ4zebqXuxjzrJV/etVGqe0=
+		SJTWVsxI3o7WvBQ/0nk9viTv7k0=
 		</data>
 		<key>Modules/iOSSDKStreaming.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		R6h6Lm49qmnYazXQeW/lxUbq8f4=
+		8UBehfL619Wx4m4FPQOjDJ92Jh0=
 		</data>
 		<key>Modules/iOSSDKStreaming.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		Js4Pex7f+xQprh+pSvEnELoIMX4=
-		</data>
-		<key>Modules/iOSSDKStreaming.swiftmodule/arm64.swiftdoc</key>
-		<data>
-		R6h6Lm49qmnYazXQeW/lxUbq8f4=
-		</data>
-		<key>Modules/iOSSDKStreaming.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		Js4Pex7f+xQprh+pSvEnELoIMX4=
+		K29XYgEe4HBpY3nfrJS2cZkcDqo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -62,7 +50,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gdfgapct9vnBM5TN0Q+nj3fMKPF72fGuO2cksySB3oQ=
+			KMHUecLUZKEvpHlyPcWMFRzysmJWUEP/xyK5HkWf8G0=
 			</data>
 		</dict>
 		<key>Headers/iOSSDKStreaming.h</key>
@@ -76,42 +64,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vsKKOQ6zdLtpzWQh1e3lHfgUpEpNUv5YynMvgjXe1s0=
-			</data>
-		</dict>
-		<key>Modules/iOSSDKStreaming.swiftmodule/Project/arm64.swiftsourceinfo</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			vsKKOQ6zdLtpzWQh1e3lHfgUpEpNUv5YynMvgjXe1s0=
+			drreXSWSaMiRHRDms0NrbjaZR/9BCyrj6FoQ91t0g9Q=
 			</data>
 		</dict>
 		<key>Modules/iOSSDKStreaming.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zTYDv96xaA6P7r9wbb2yWeWzTgXFIwwIZL4sY/sAo20=
+			Xqm8pktOEryz+FW+fKIddXtTjiQ1UuFjpUCFTe07Mq4=
 			</data>
 		</dict>
 		<key>Modules/iOSSDKStreaming.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HWjPYm1KgXC9AzeUUQSBXElz2BrO2TtmZ487hmh8WRA=
-			</data>
-		</dict>
-		<key>Modules/iOSSDKStreaming.swiftmodule/arm64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			zTYDv96xaA6P7r9wbb2yWeWzTgXFIwwIZL4sY/sAo20=
-			</data>
-		</dict>
-		<key>Modules/iOSSDKStreaming.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			HWjPYm1KgXC9AzeUUQSBXElz2BrO2TtmZ487hmh8WRA=
+			039LiJflIlex9H5qebOVzssk7JAxWAYNFhiuWVBK8ec=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
