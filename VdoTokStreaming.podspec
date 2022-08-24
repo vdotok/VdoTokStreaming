@@ -3,7 +3,7 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "VdoTokStreaming"
-  spec.version      = "1.1.2"
+  spec.version      = "1.1.3"
   spec.summary      = "VdoTokStreaming SDK offers one-to-one calls, many-to-many calls, public and group broadcast calls."
 
  
@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
 
 
 
-  spec.author             = { "Sohaib Hussain" => "sohaib.hussain@norgic.com" }
+  spec.author             = { "Sohaib Hussain" => "sohaib.hussain@vdotok.com" }
 
 
 
@@ -30,7 +30,8 @@ Pod::Spec.new do |spec|
 
 
 
-  spec.vendored_frameworks = 'iOSSDKStreaming.framework', 'SocketRocket.framework' , 'WebRTC.framework'
+  spec.vendored_frameworks = 'iOSSDKStreaming.framework', 'WebRTC.framework'
+  spec.ios.dependency 'SocketRocket'
   spec.swift_version = "5.0"
 
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}

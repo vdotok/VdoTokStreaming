@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/iOSSDKStreaming-Swift.h</key>
 		<data>
-		n7uMerrkUWws1UyJyzQl48N0RSE=
+		7G9zwOokv3LohucFupuVZDfIBsM=
 		</data>
 		<key>Headers/iOSSDKStreaming.h</key>
 		<data>
@@ -18,19 +18,19 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		7q0olNGeZ9Rku0O4vszQ+J48fhs=
+		VJ+/mUBlt9OfOIanol3V89OKMJM=
 		</data>
 		<key>Modules/iOSSDKStreaming.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		zUC2riHbNyLyQFLT3nvzsGamhxc=
+		lgTKHLuW6QgH7gToDVIQo/R9/Hc=
 		</data>
 		<key>Modules/iOSSDKStreaming.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		8UBehfL619Wx4m4FPQOjDJ92Jh0=
+		7F+N4WQoYbmLDbVk7zZREad1MXM=
 		</data>
 		<key>Modules/iOSSDKStreaming.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		WA2dQNNFsbrII3gSaqQIsMatgRs=
+		DJwQ14qGWXu4Qgn8P+LjPnEvP/c=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -50,7 +50,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KMHUecLUZKEvpHlyPcWMFRzysmJWUEP/xyK5HkWf8G0=
+			pWwGD9H3rUAAult/j/B3gUaxE/kYjrhLt+I7+lXpg44=
 			</data>
 		</dict>
 		<key>Headers/iOSSDKStreaming.h</key>
@@ -64,21 +64,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5HmTCUGevMuZhxyPUK+3K1yxEWi5hM8aK/KKK8Pv89A=
+			Nh0v235wvxW/lzb7omSdxT3c/n95DWQmH4W+6LSve5E=
 			</data>
 		</dict>
 		<key>Modules/iOSSDKStreaming.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Xqm8pktOEryz+FW+fKIddXtTjiQ1UuFjpUCFTe07Mq4=
+			8ySieD3U1sdruBa0DfZHF9ReoGnRKAA+RoHrnXLJUoQ=
 			</data>
 		</dict>
 		<key>Modules/iOSSDKStreaming.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kwO8b+pupjCMwWeLBQrtBm+Vx0emaeqF0xIQm90ozuc=
+			Qatgxp3Sczby/Ok2UQr8lN0nano/uCJ9IZDz3kDzm9M=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
