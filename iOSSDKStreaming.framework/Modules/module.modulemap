@@ -6,6 +6,6 @@ framework module iOSSDKStreaming {
 }
 
 module iOSSDKStreaming.Swift {
-    header "iOSSDKStreaming-Swift.h"
-    requires objc
+  header "iOSSDKStreaming-Swift.h"
+  requires objc
 }

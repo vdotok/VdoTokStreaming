@@ -1,0 +1,520 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name iOSSDKStreaming
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import AVKit
+import CoreFoundation
+import CryptoKit
+import Foundation
+import MediaPlayer
+import MultipeerConnectivity
+import Network
+import ReplayKit
+import SocketRocket
+import Swift
+import UIKit
+import VideoToolbox
+import WebRTC
+import _Concurrency
+import _StringProcessing
+@_exported import iOSSDKStreaming
+public struct SessionCustomData : Swift.Codable {
+  public let calleName: Swift.String?
+  public let groupName: Swift.String?
+  public let groupAutoCreatedValue: Swift.String?
+  public init(calleName: Swift.String? = nil, groupName: Swift.String? = nil, groupAutoCreatedValue: Swift.String? = nil)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct RegisterRequest : Swift.Codable {
+  public var referenceID: Swift.String
+  public init(type: Swift.String, requestType: Swift.String, referenceID: Swift.String, authorizationToken: Swift.String, socketType: iOSSDKStreaming.ConnectionType = .app, requestID: Swift.String, projectID: Swift.String, reConnect: Swift.Int = 0)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public class VTokBaseSessionInit : iOSSDKStreaming.VTokBaseSession, Swift.Codable {
+  public var from: Swift.String
+  public var to: [Swift.String]
+  public var requestID: Swift.String
+  public var sessionUUID: Swift.String
+  public var sessionMediaType: iOSSDKStreaming.SessionMediaType
+  public var sessionDirection: iOSSDKStreaming.SessionDirection
+  public var state: iOSSDKStreaming.SessionStatus
+  public var callType: iOSSDKStreaming.CallType
+  public var sessionType: iOSSDKStreaming.SessionType
+  public var publisherRefId: Swift.String?
+  public var associatedSessionUUID: Swift.String?
+  public var broadcastType: iOSSDKStreaming.BroadcastType?
+  public var broadcastOption: iOSSDKStreaming.BroadcastOptions?
+  public var connectedUsers: [Swift.String]
+  public var url: Swift.String?
+  public var sessionTime: Swift.String
+  public var data: iOSSDKStreaming.SessionCustomData?
+  public var sessionServerType: iOSSDKStreaming.SessionServerType?
+  public init(from: Swift.String, to: [Swift.String], requestID: Swift.String = "", sessionUUID: Swift.String, sessionMediaType: iOSSDKStreaming.SessionMediaType, sessionDirection: iOSSDKStreaming.SessionDirection = .outgoing, state: iOSSDKStreaming.SessionStatus = .calling, callType: iOSSDKStreaming.CallType = .manytomany, sessionType: iOSSDKStreaming.SessionType = .call, publisherRefId: Swift.String? = "", associatedSessionUUID: Swift.String? = nil, broadcastType: iOSSDKStreaming.BroadcastType = .group, broadcastOption: iOSSDKStreaming.BroadcastOptions? = nil, connectedUsers: [Swift.String] = [], url: Swift.String? = nil, sessionTime: Swift.String = "", data: iOSSDKStreaming.SessionCustomData? = nil, sessionServerType: iOSSDKStreaming.SessionServerType? = nil)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public class SessionInit : iOSSDKStreaming.Session, Swift.Codable {
+  public var from: Swift.String
+  public var to: [Swift.String]
+  public var type: Swift.String
+  public var requestType: Swift.String
+  public var sessionType: iOSSDKStreaming.SessionType
+  public var callType: iOSSDKStreaming.CallType
+  public var mediaType: iOSSDKStreaming.SessionMediaType
+  public var requestID: Swift.String
+  public var sessionUUID: Swift.String
+  public var mcToken: Swift.String
+  public var sdpOffer: Swift.String
+  public var state: iOSSDKStreaming.SessionStatus
+  public var sessionMediaType: iOSSDKStreaming.SessionMediaType
+  public var sessionDirection: iOSSDKStreaming.SessionDirection
+  public var associatedSessionUUID: Swift.String?
+  public var publisherRefId: Swift.String?
+  public var broadcastType: iOSSDKStreaming.BroadcastType?
+  public var broadcastOption: iOSSDKStreaming.BroadcastOptions?
+  public var connectedUsers: [Swift.String]
+  public var url: Swift.String?
+  public var sessionTime: Swift.String
+  public var data: iOSSDKStreaming.SessionCustomData?
+  public var sessionServerType: iOSSDKStreaming.SessionServerType?
+  public init(session: iOSSDKStreaming.VTokBaseSession, type: Swift.String = "request", requestType: Swift.String = "session_invite", mcToken: Swift.String, sdpOffer: Swift.String, broadcastType: iOSSDKStreaming.BroadcastType = .group, broadcastOption: iOSSDKStreaming.BroadcastOptions? = nil, connectedUsers: [Swift.String], data: iOSSDKStreaming.SessionCustomData? = nil, sessionServerType: iOSSDKStreaming.SessionServerType? = nil)
+  public init(from: Swift.String, to: [Swift.String], type: Swift.String, requestType: Swift.String, sessionType: iOSSDKStreaming.SessionType, callType: iOSSDKStreaming.CallType, mediaType: iOSSDKStreaming.SessionMediaType, requestID: Swift.String, sessionUUID: Swift.String, mcToken: Swift.String, sdpOffer: Swift.String, state: iOSSDKStreaming.SessionStatus, sessionMediaType: iOSSDKStreaming.SessionMediaType, sessionDirection: iOSSDKStreaming.SessionDirection, associatedSessionUUID: Swift.String? = nil, publisherRefId: Swift.String = "", broadcastType: iOSSDKStreaming.BroadcastType? = nil, connectedUsers: [Swift.String], sessionTime: Swift.String = "", data: iOSSDKStreaming.SessionCustomData? = nil, sessionServerType: iOSSDKStreaming.SessionServerType? = nil)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public struct ScreenShareAppData : Swift.Codable {
+  public let url: Swift.String
+  public let authenticationToken: Swift.String
+  public let baseSession: iOSSDKStreaming.VTokBaseSessionInit
+  public init(url: Swift.String, authenticationToken: Swift.String, baseSession: iOSSDKStreaming.VTokBaseSessionInit)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum ScreenShareBytes : Swift.Int, Swift.Codable {
+  case passAll
+  case none
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public class UserStream {
+  public var renderer: UIKit.UIView
+  public var referenceID: Swift.String
+  public var sessionUUID: Swift.String
+  public var streamID: Swift.String
+  public var sessionMediaType: iOSSDKStreaming.SessionMediaType
+  public var stateInformation: iOSSDKStreaming.StateInformation?
+  public var rendererSize: CoreFoundation.CGSize
+  public var userStreamType: iOSSDKStreaming.UserStreamType
+  public var streamDirection: iOSSDKStreaming.StreamDirection
+  public init(renderer: UIKit.UIView, referenceID: Swift.String, sessionUUID: Swift.String, streamID: Swift.String, sessionMediaType: iOSSDKStreaming.SessionMediaType = .videoCall, stateInformation: iOSSDKStreaming.StateInformation? = nil, rendererSize: CoreFoundation.CGSize = .zero, userStreamType: iOSSDKStreaming.UserStreamType = .call, streamDirection: iOSSDKStreaming.StreamDirection)
+  @objc deinit
+}
+public struct SessionRequest {
+  public let sessionUUID: Swift.String
+  public let from: Swift.String
+  public let sessionType: iOSSDKStreaming.SessionType
+  public let sessionMediaType: iOSSDKStreaming.SessionMediaType
+  public let calltype: iOSSDKStreaming.CallType
+  public let associatedSessionUUID: Swift.String?
+  public let data: iOSSDKStreaming.SessionCustomData
+}
+public struct SessionBusy : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public class StateInformationImp : iOSSDKStreaming.StateInformation, Swift.Codable {
+  final public let sessionUUID: Swift.String
+  public var referenceID: Swift.String
+  final public let audioInformation: Swift.Int
+  final public let videoInformation: Swift.Int
+  public init(requestType: Swift.String, type: Swift.String, requestID: Swift.String, sessionUUID: Swift.String, mcToken: Swift.String?, referenceID: Swift.String, audioInformation: Swift.Int, videoInformation: Swift.Int)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public protocol IdGeneratable {
+  func getUUID(string: Swift.String) -> Swift.String
+}
+public class IdGenerator : iOSSDKStreaming.IdGeneratable {
+  public init()
+  public func getUUID(string: Swift.String) -> Swift.String
+  @objc deinit
+}
+public protocol VideoTalkSDK : iOSSDKStreaming.VideoTalkSDKInput {
+  init(url: Swift.String, registerRequest: iOSSDKStreaming.RegisterRequest, connectionDelegate: iOSSDKStreaming.SDKConnectionDelegate)
+  init(url: Swift.String, registerRequest: iOSSDKStreaming.RegisterRequest, connectionDelegate: iOSSDKStreaming.SDKConnectionDelegate, connectionType: iOSSDKStreaming.ConnectionType)
+  func initiate(session: iOSSDKStreaming.VTokBaseSession, sessionDelegate: iOSSDKStreaming.SessionDelegate?)
+  func sessionCount() -> Swift.Int
+  func fetchStreams()
+}
+public protocol VideoTalkSDKInput {
+  func hangup(session: iOSSDKStreaming.VTokBaseSession)
+  func reject(session: iOSSDKStreaming.VTokBaseSession)
+  func accept(session: iOSSDKStreaming.VTokBaseSession)
+  func mute(session: iOSSDKStreaming.VTokBaseSession, state: iOSSDKStreaming.AudioState)
+  func speaker(session: iOSSDKStreaming.VTokBaseSession, state: iOSSDKStreaming.SpeakerState)
+  func switchCamera(session: iOSSDKStreaming.VTokBaseSession, to: iOSSDKStreaming.CameraType)
+  func disableVideo(session: iOSSDKStreaming.VTokBaseSession, State: iOSSDKStreaming.VideoState)
+  func set(sessionDelegate: iOSSDKStreaming.SessionDelegate, for baseSession: iOSSDKStreaming.VTokBaseSession)
+  func closeConnection()
+  func processSampleBuffer(_ sampleBuffer: CoreMedia.CMSampleBuffer, with sampleBufferType: ReplayKit.RPSampleBufferType)
+  func disableScreen(for session: iOSSDKStreaming.VTokBaseSession, state: iOSSDKStreaming.ScreenShareBytes)
+  func playStreamOnTv(for session: iOSSDKStreaming.VTokBaseSession, state: iOSSDKStreaming.StreamStatus)
+}
+public enum ServerType : Swift.Int, Swift.Codable {
+  case mediaServer
+  case peerTopeer
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum ConnectionType : Swift.Int, Swift.Codable {
+  case app
+  case screenShare
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum SessionDirection : Swift.Int, Swift.Codable {
+  case incoming
+  case outgoing
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum StreamDirection : Swift.Int {
+  case incoming
+  case outgoing
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum SessionMediaType : Swift.String, Swift.Codable {
+  case audioCall
+  case videoCall
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SessionStatus : Swift.Int, Swift.Codable {
+  case calling
+  case ringing
+  case connected
+  case failed
+  case rejected
+  case onhold
+  case busy
+  case missedCall
+  case receivedSessionInitiation
+  case invalidTarget
+  case hangup
+  case tryingToConnect
+  case reconnect
+  case updateParticipent
+  case insufficientBalance
+  case suspendedByProvider
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum SessionType : Swift.String, Swift.Codable {
+  case call
+  case screenshare
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum CallType : Swift.String, Swift.Codable {
+  case onetoone
+  case onetomany
+  case manytomany
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum VideoState {
+  case videoEnabled
+  case videoDisabled
+  public static func == (a: iOSSDKStreaming.VideoState, b: iOSSDKStreaming.VideoState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum AudioState {
+  case mute
+  case unMute
+  public static func == (a: iOSSDKStreaming.AudioState, b: iOSSDKStreaming.AudioState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum CameraType {
+  case front
+  case rear
+  public static func == (a: iOSSDKStreaming.CameraType, b: iOSSDKStreaming.CameraType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum SpeakerState {
+  case onSpeaker
+  case onEarPiece
+  public static func == (a: iOSSDKStreaming.SpeakerState, b: iOSSDKStreaming.SpeakerState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum SDKOutPut {
+  case registered
+  case disconnected(Swift.String)
+  case sessionRequest(iOSSDKStreaming.VTokBaseSession)
+}
+public enum BroadcastType : Swift.Int, Swift.Codable {
+  case group
+  case publicURL
+  case none
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum BroadcastOptions : Swift.Int, Swift.Codable {
+  case screenShareWithAppAudio
+  case screenShareWithMicAudio
+  case videoCall
+  case screenShareWithAppAudioAndVideoCall
+  case screenShareWithVideoCall
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum UserStreamType : Swift.Int {
+  case screenShare
+  case call
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum StreamStatus : Swift.Int, Swift.Codable {
+  case initiate
+  case play
+  case pause
+  case stop
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum SessionServerType : Swift.Int, Swift.Codable {
+  case SFU
+  case peerToPeer
+  case MCU
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
+}
+public protocol SDKConnectionDelegate : AnyObject {
+  func didGenerate(output: iOSSDKStreaming.SDKOutPut)
+}
+public protocol SessionDelegate : AnyObject {
+  func configureLocalViewFor(session: iOSSDKStreaming.VTokBaseSession, with stream: [iOSSDKStreaming.UserStream])
+  func configureRemoteViews(for session: iOSSDKStreaming.VTokBaseSession, with streams: [iOSSDKStreaming.UserStream])
+  func didGetPublicUrl(for session: iOSSDKStreaming.VTokBaseSession, with url: Swift.String)
+  func stateDidUpdate(for session: iOSSDKStreaming.VTokBaseSession)
+  func sessionTimeDidUpdate(with value: Swift.String)
+}
+@objc public class SameNetworkConnectionManager : ObjectiveC.NSObject {
+  public var devices: [MultipeerConnectivity.MCPeerID]
+  public var sessionUUID: Swift.String
+  public init(peerName: Swift.String)
+  public func startBrowsing()
+  public func invitePeer(_ peerID: MultipeerConnectivity.MCPeerID, refID: Swift.String)
+  @objc deinit
+}
+extension iOSSDKStreaming.SameNetworkConnectionManager : MultipeerConnectivity.MCNearbyServiceBrowserDelegate {
+  @objc dynamic public func browser(_ browser: MultipeerConnectivity.MCNearbyServiceBrowser, foundPeer peerID: MultipeerConnectivity.MCPeerID, withDiscoveryInfo info: [Swift.String : Swift.String]?)
+  @objc dynamic public func browser(_ browser: MultipeerConnectivity.MCNearbyServiceBrowser, lostPeer peerID: MultipeerConnectivity.MCPeerID)
+}
+extension iOSSDKStreaming.SameNetworkConnectionManager : MultipeerConnectivity.MCSessionDelegate {
+  @objc dynamic public func session(_ session: MultipeerConnectivity.MCSession, peer peerID: MultipeerConnectivity.MCPeerID, didChange state: MultipeerConnectivity.MCSessionState)
+  @objc dynamic public func session(_ session: MultipeerConnectivity.MCSession, didReceive data: Foundation.Data, fromPeer peerID: MultipeerConnectivity.MCPeerID)
+  @objc dynamic public func session(_ session: MultipeerConnectivity.MCSession, didReceive stream: Foundation.InputStream, withName streamName: Swift.String, fromPeer peerID: MultipeerConnectivity.MCPeerID)
+  @objc dynamic public func session(_ session: MultipeerConnectivity.MCSession, didStartReceivingResourceWithName resourceName: Swift.String, fromPeer peerID: MultipeerConnectivity.MCPeerID, with progress: Foundation.Progress)
+  @objc dynamic public func session(_ session: MultipeerConnectivity.MCSession, didFinishReceivingResourceWithName resourceName: Swift.String, fromPeer peerID: MultipeerConnectivity.MCPeerID, at localURL: Foundation.URL?, withError error: Swift.Error?)
+}
+extension iOSSDKStreaming.SameNetworkConnectionManager : MultipeerConnectivity.MCNearbyServiceAdvertiserDelegate {
+  @objc dynamic public func advertiser(_ advertiser: MultipeerConnectivity.MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MultipeerConnectivity.MCPeerID, withContext context: Foundation.Data?, invitationHandler: @escaping (Swift.Bool, MultipeerConnectivity.MCSession?) -> Swift.Void)
+  @objc dynamic public func session(_ session: MultipeerConnectivity.MCSession, didReceiveCertificate certificate: [Any]?, fromPeer peerID: MultipeerConnectivity.MCPeerID, certificateHandler: @escaping (Swift.Bool) -> Swift.Void)
+}
+@objc public class VTokSDK : ObjectiveC.NSObject {
+  required public init(url: Swift.String, registerRequest: iOSSDKStreaming.RegisterRequest, connectionDelegate: iOSSDKStreaming.SDKConnectionDelegate)
+  required public init(url: Swift.String, registerRequest: iOSSDKStreaming.RegisterRequest, connectionDelegate: iOSSDKStreaming.SDKConnectionDelegate, connectionType: iOSSDKStreaming.ConnectionType)
+  public func getPeers() -> [MultipeerConnectivity.MCPeerID]?
+  public func invitePeer(peer: MultipeerConnectivity.MCPeerID, refID: Swift.String)
+  public func closeConnection()
+  @objc deinit
+}
+extension iOSSDKStreaming.VTokSDK : iOSSDKStreaming.VideoTalkSDK {
+  public func playStreamOnTv(for session: iOSSDKStreaming.VTokBaseSession, state: iOSSDKStreaming.StreamStatus)
+  public func processSampleBuffer(_ sampleBuffer: CoreMedia.CMSampleBuffer, with sampleBufferType: ReplayKit.RPSampleBufferType)
+  public func initiate(session: iOSSDKStreaming.VTokBaseSession, sessionDelegate: iOSSDKStreaming.SessionDelegate?)
+  public func hangup(session: iOSSDKStreaming.VTokBaseSession)
+  public func reject(session: iOSSDKStreaming.VTokBaseSession)
+  public func accept(session: iOSSDKStreaming.VTokBaseSession)
+  public func mute(session: iOSSDKStreaming.VTokBaseSession, state: iOSSDKStreaming.AudioState)
+  public func disableVideo(session: iOSSDKStreaming.VTokBaseSession, State: iOSSDKStreaming.VideoState)
+  public func disableScreen(for session: iOSSDKStreaming.VTokBaseSession, state: iOSSDKStreaming.ScreenShareBytes)
+  public func speaker(session: iOSSDKStreaming.VTokBaseSession, state: iOSSDKStreaming.SpeakerState)
+  public func switchCamera(session: iOSSDKStreaming.VTokBaseSession, to: iOSSDKStreaming.CameraType)
+  public func set(sessionDelegate: iOSSDKStreaming.SessionDelegate, for baseSession: iOSSDKStreaming.VTokBaseSession)
+}
+extension iOSSDKStreaming.VTokSDK : SocketRocket.SRWebSocketDelegate {
+  @objc dynamic public func webSocket(_ webSocket: SocketRocket.SRWebSocket, didReceiveMessage message: Any)
+  @objc dynamic public func webSocket(_ webSocket: SocketRocket.SRWebSocket, didFailWithError error: Swift.Error)
+  @objc dynamic public func webSocket(_ webSocket: SocketRocket.SRWebSocket, didReceivePong pongPayload: Foundation.Data?)
+  @objc dynamic public func webSocket(_ webSocket: SocketRocket.SRWebSocket, didCloseWithCode code: Swift.Int, reason: Swift.String?, wasClean: Swift.Bool)
+  @objc dynamic public func webSocketDidOpen(_ webSocket: SocketRocket.SRWebSocket)
+}
+extension iOSSDKStreaming.VTokSDK {
+  public func send(jsonString: Swift.String?)
+}
+extension iOSSDKStreaming.VTokSDK : WebRTC.RTCAudioSessionDelegate {
+  @objc dynamic public func audioSession(_ audioSession: WebRTC.RTCAudioSession, didReceive sample: CoreMedia.CMSampleBuffer)
+  @objc dynamic public func audioSessionDidChangeRoute(_ session: WebRTC.RTCAudioSession, reason: AVFAudio.AVAudioSession.RouteChangeReason, previousRoute: AVFAudio.AVAudioSessionRouteDescription)
+  @objc dynamic public func audioSessionDidBeginInterruption(_ session: WebRTC.RTCAudioSession)
+  @objc dynamic public func audioSessionDidEndInterruption(_ session: WebRTC.RTCAudioSession, shouldResumeSession: Swift.Bool)
+}
+extension iOSSDKStreaming.VTokSDK {
+  public func fetchStreams()
+  public func sessionCount() -> Swift.Int
+}
+public protocol VTokBaseSession : AnyObject, Swift.Decodable, Swift.Encodable {
+  var from: Swift.String { get set }
+  var to: [Swift.String] { get set }
+  var requestID: Swift.String { get set }
+  var sessionUUID: Swift.String { get set }
+  var sessionMediaType: iOSSDKStreaming.SessionMediaType { get set }
+  var sessionDirection: iOSSDKStreaming.SessionDirection { get set }
+  var state: iOSSDKStreaming.SessionStatus { get set }
+  var callType: iOSSDKStreaming.CallType { get set }
+  var sessionType: iOSSDKStreaming.SessionType { get set }
+  var associatedSessionUUID: Swift.String? { get set }
+  var publisherRefId: Swift.String? { get set }
+  var broadcastType: iOSSDKStreaming.BroadcastType? { get set }
+  var broadcastOption: iOSSDKStreaming.BroadcastOptions? { get set }
+  var connectedUsers: [Swift.String] { get set }
+  var url: Swift.String? { get set }
+  var sessionTime: Swift.String { get set }
+  var data: iOSSDKStreaming.SessionCustomData? { get set }
+  var sessionServerType: iOSSDKStreaming.SessionServerType? { get set }
+}
+public protocol Session : iOSSDKStreaming.VTokBaseSession {
+  var type: Swift.String { get set }
+  var requestType: Swift.String { get set }
+  var mcToken: Swift.String { get set }
+  var sdpOffer: Swift.String { get set }
+  var publisherRefId: Swift.String? { get set }
+  var associatedSessionUUID: Swift.String? { get set }
+}
+public protocol SDKDelegateConfigurator {
+  var connectionDelegate: iOSSDKStreaming.SDKConnectionDelegate { get }
+  var sessionDelegate: iOSSDKStreaming.SessionDelegate { get }
+}
+public protocol StateInformation {
+  var sessionUUID: Swift.String { get }
+  var referenceID: Swift.String { get set }
+  var audioInformation: Swift.Int { get }
+  var videoInformation: Swift.Int { get }
+}
+extension Foundation.Date {
+  public func stringValue() -> Swift.String
+}
+extension iOSSDKStreaming.ScreenShareBytes : Swift.Equatable {}
+extension iOSSDKStreaming.ScreenShareBytes : Swift.Hashable {}
+extension iOSSDKStreaming.ScreenShareBytes : Swift.RawRepresentable {}
+extension iOSSDKStreaming.ServerType : Swift.Equatable {}
+extension iOSSDKStreaming.ServerType : Swift.Hashable {}
+extension iOSSDKStreaming.ServerType : Swift.RawRepresentable {}
+extension iOSSDKStreaming.ConnectionType : Swift.Equatable {}
+extension iOSSDKStreaming.ConnectionType : Swift.Hashable {}
+extension iOSSDKStreaming.ConnectionType : Swift.RawRepresentable {}
+extension iOSSDKStreaming.SessionDirection : Swift.Equatable {}
+extension iOSSDKStreaming.SessionDirection : Swift.Hashable {}
+extension iOSSDKStreaming.SessionDirection : Swift.RawRepresentable {}
+extension iOSSDKStreaming.StreamDirection : Swift.Equatable {}
+extension iOSSDKStreaming.StreamDirection : Swift.Hashable {}
+extension iOSSDKStreaming.StreamDirection : Swift.RawRepresentable {}
+extension iOSSDKStreaming.SessionMediaType : Swift.Equatable {}
+extension iOSSDKStreaming.SessionMediaType : Swift.Hashable {}
+extension iOSSDKStreaming.SessionMediaType : Swift.RawRepresentable {}
+extension iOSSDKStreaming.SessionStatus : Swift.Equatable {}
+extension iOSSDKStreaming.SessionStatus : Swift.Hashable {}
+extension iOSSDKStreaming.SessionStatus : Swift.RawRepresentable {}
+extension iOSSDKStreaming.SessionType : Swift.Equatable {}
+extension iOSSDKStreaming.SessionType : Swift.Hashable {}
+extension iOSSDKStreaming.SessionType : Swift.RawRepresentable {}
+extension iOSSDKStreaming.CallType : Swift.Equatable {}
+extension iOSSDKStreaming.CallType : Swift.Hashable {}
+extension iOSSDKStreaming.CallType : Swift.RawRepresentable {}
+extension iOSSDKStreaming.VideoState : Swift.Equatable {}
+extension iOSSDKStreaming.VideoState : Swift.Hashable {}
+extension iOSSDKStreaming.AudioState : Swift.Equatable {}
+extension iOSSDKStreaming.AudioState : Swift.Hashable {}
+extension iOSSDKStreaming.CameraType : Swift.Equatable {}
+extension iOSSDKStreaming.CameraType : Swift.Hashable {}
+extension iOSSDKStreaming.SpeakerState : Swift.Equatable {}
+extension iOSSDKStreaming.SpeakerState : Swift.Hashable {}
+extension iOSSDKStreaming.BroadcastType : Swift.Equatable {}
+extension iOSSDKStreaming.BroadcastType : Swift.Hashable {}
+extension iOSSDKStreaming.BroadcastType : Swift.RawRepresentable {}
+extension iOSSDKStreaming.BroadcastOptions : Swift.Equatable {}
+extension iOSSDKStreaming.BroadcastOptions : Swift.Hashable {}
+extension iOSSDKStreaming.BroadcastOptions : Swift.RawRepresentable {}
+extension iOSSDKStreaming.UserStreamType : Swift.Equatable {}
+extension iOSSDKStreaming.UserStreamType : Swift.Hashable {}
+extension iOSSDKStreaming.UserStreamType : Swift.RawRepresentable {}
+extension iOSSDKStreaming.StreamStatus : Swift.Equatable {}
+extension iOSSDKStreaming.StreamStatus : Swift.Hashable {}
+extension iOSSDKStreaming.StreamStatus : Swift.RawRepresentable {}
+extension iOSSDKStreaming.SessionServerType : Swift.Equatable {}
+extension iOSSDKStreaming.SessionServerType : Swift.Hashable {}
+extension iOSSDKStreaming.SessionServerType : Swift.RawRepresentable {}
