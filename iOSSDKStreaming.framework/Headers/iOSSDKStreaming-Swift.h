@@ -266,22 +266,22 @@ SWIFT_CLASS("_TtC15iOSSDKStreaming28SameNetworkConnectionManager")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class MCNearbyServiceAdvertiser;
+@class MCNearbyServiceBrowser;
 @class MCPeerID;
+@class NSString;
+
+@interface SameNetworkConnectionManager (SWIFT_EXTENSION(iOSSDKStreaming)) <MCNearbyServiceBrowserDelegate>
+- (void)browser:(MCNearbyServiceBrowser * _Nonnull)browser foundPeer:(MCPeerID * _Nonnull)peerID withDiscoveryInfo:(NSDictionary<NSString *, NSString *> * _Nullable)info;
+- (void)browser:(MCNearbyServiceBrowser * _Nonnull)browser lostPeer:(MCPeerID * _Nonnull)peerID;
+@end
+
+@class MCNearbyServiceAdvertiser;
 @class NSData;
 @class MCSession;
 
 @interface SameNetworkConnectionManager (SWIFT_EXTENSION(iOSSDKStreaming)) <MCNearbyServiceAdvertiserDelegate>
 - (void)advertiser:(MCNearbyServiceAdvertiser * _Nonnull)advertiser didReceiveInvitationFromPeer:(MCPeerID * _Nonnull)peerID withContext:(NSData * _Nullable)context invitationHandler:(void (^ _Nonnull)(BOOL, MCSession * _Nullable))invitationHandler;
 - (void)session:(MCSession * _Nonnull)session didReceiveCertificate:(NSArray * _Nullable)certificate fromPeer:(MCPeerID * _Nonnull)peerID certificateHandler:(void (^ _Nonnull)(BOOL))certificateHandler;
-@end
-
-@class MCNearbyServiceBrowser;
-@class NSString;
-
-@interface SameNetworkConnectionManager (SWIFT_EXTENSION(iOSSDKStreaming)) <MCNearbyServiceBrowserDelegate>
-- (void)browser:(MCNearbyServiceBrowser * _Nonnull)browser foundPeer:(MCPeerID * _Nonnull)peerID withDiscoveryInfo:(NSDictionary<NSString *, NSString *> * _Nullable)info;
-- (void)browser:(MCNearbyServiceBrowser * _Nonnull)browser lostPeer:(MCPeerID * _Nonnull)peerID;
 @end
 
 @class NSInputStream;
@@ -323,7 +323,6 @@ SWIFT_CLASS("_TtC15iOSSDKStreaming7VTokSDK")
 @end
 
 
-
 @class SRWebSocket;
 
 @interface VTokSDK (SWIFT_EXTENSION(iOSSDKStreaming)) <SRWebSocketDelegate>
@@ -333,6 +332,7 @@ SWIFT_CLASS("_TtC15iOSSDKStreaming7VTokSDK")
 - (void)webSocket:(SRWebSocket * _Nonnull)webSocket didCloseWithCode:(NSInteger)code reason:(NSString * _Nullable)reason wasClean:(BOOL)wasClean;
 - (void)webSocketDidOpen:(SRWebSocket * _Nonnull)webSocket;
 @end
+
 
 
 
