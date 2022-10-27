@@ -232,8 +232,6 @@ using UInt = size_t;
 #endif
 @import AVFAudio;
 @import CoreMedia;
-@import Foundation;
-@import MultipeerConnectivity;
 @import ObjectiveC;
 @import SocketRocket;
 @import WebRTC;
@@ -260,49 +258,13 @@ using UInt = size_t;
 
 
 
-SWIFT_CLASS("_TtC15iOSSDKStreaming28SameNetworkConnectionManager")
-@interface SameNetworkConnectionManager : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class MCNearbyServiceBrowser;
-@class MCPeerID;
-@class NSString;
-
-@interface SameNetworkConnectionManager (SWIFT_EXTENSION(iOSSDKStreaming)) <MCNearbyServiceBrowserDelegate>
-- (void)browser:(MCNearbyServiceBrowser * _Nonnull)browser foundPeer:(MCPeerID * _Nonnull)peerID withDiscoveryInfo:(NSDictionary<NSString *, NSString *> * _Nullable)info;
-- (void)browser:(MCNearbyServiceBrowser * _Nonnull)browser lostPeer:(MCPeerID * _Nonnull)peerID;
-@end
-
-@class MCNearbyServiceAdvertiser;
-@class NSData;
-@class MCSession;
-
-@interface SameNetworkConnectionManager (SWIFT_EXTENSION(iOSSDKStreaming)) <MCNearbyServiceAdvertiserDelegate>
-- (void)advertiser:(MCNearbyServiceAdvertiser * _Nonnull)advertiser didReceiveInvitationFromPeer:(MCPeerID * _Nonnull)peerID withContext:(NSData * _Nullable)context invitationHandler:(void (^ _Nonnull)(BOOL, MCSession * _Nullable))invitationHandler;
-- (void)session:(MCSession * _Nonnull)session didReceiveCertificate:(NSArray * _Nullable)certificate fromPeer:(MCPeerID * _Nonnull)peerID certificateHandler:(void (^ _Nonnull)(BOOL))certificateHandler;
-@end
-
-@class NSInputStream;
-@class NSProgress;
-@class NSURL;
-
-@interface SameNetworkConnectionManager (SWIFT_EXTENSION(iOSSDKStreaming)) <MCSessionDelegate>
-- (void)session:(MCSession * _Nonnull)session peer:(MCPeerID * _Nonnull)peerID didChangeState:(MCSessionState)state;
-- (void)session:(MCSession * _Nonnull)session didReceiveData:(NSData * _Nonnull)data fromPeer:(MCPeerID * _Nonnull)peerID;
-- (void)session:(MCSession * _Nonnull)session didReceiveStream:(NSInputStream * _Nonnull)stream withName:(NSString * _Nonnull)streamName fromPeer:(MCPeerID * _Nonnull)peerID;
-- (void)session:(MCSession * _Nonnull)session didStartReceivingResourceWithName:(NSString * _Nonnull)resourceName fromPeer:(MCPeerID * _Nonnull)peerID withProgress:(NSProgress * _Nonnull)progress;
-- (void)session:(MCSession * _Nonnull)session didFinishReceivingResourceWithName:(NSString * _Nonnull)resourceName fromPeer:(MCPeerID * _Nonnull)peerID atURL:(NSURL * _Nullable)localURL withError:(NSError * _Nullable)error;
-@end
-
-
 
 SWIFT_CLASS("_TtC15iOSSDKStreaming7VTokSDK")
 @interface VTokSDK : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
@@ -322,17 +284,17 @@ SWIFT_CLASS("_TtC15iOSSDKStreaming7VTokSDK")
 - (void)audioSessionDidEndInterruption:(RTCAudioSession * _Nonnull)session shouldResumeSession:(BOOL)shouldResumeSession;
 @end
 
-
 @class SRWebSocket;
+@class NSData;
+@class NSString;
 
 @interface VTokSDK (SWIFT_EXTENSION(iOSSDKStreaming)) <SRWebSocketDelegate>
-- (void)webSocket:(SRWebSocket * _Nonnull)webSocket didReceiveMessage:(id _Nonnull)message;
-- (void)webSocket:(SRWebSocket * _Nonnull)webSocket didFailWithError:(NSError * _Nonnull)error;
-- (void)webSocket:(SRWebSocket * _Nonnull)webSocket didReceivePong:(NSData * _Nullable)pongPayload;
-- (void)webSocket:(SRWebSocket * _Nonnull)webSocket didCloseWithCode:(NSInteger)code reason:(NSString * _Nullable)reason wasClean:(BOOL)wasClean;
-- (void)webSocketDidOpen:(SRWebSocket * _Nonnull)webSocket;
+- (void)webSocket:(SRWebSocket * _Null_unspecified)webSocket didReceiveMessage:(id _Null_unspecified)message;
+- (void)webSocket:(SRWebSocket * _Null_unspecified)webSocket didFailWithError:(NSError * _Null_unspecified)error;
+- (void)webSocket:(SRWebSocket * _Null_unspecified)webSocket didReceivePong:(NSData * _Null_unspecified)pongPayload;
+- (void)webSocket:(SRWebSocket * _Null_unspecified)webSocket didCloseWithCode:(NSInteger)code reason:(NSString * _Null_unspecified)reason wasClean:(BOOL)wasClean;
+- (void)webSocketDidOpen:(SRWebSocket * _Null_unspecified)webSocket;
 @end
-
 
 
 
