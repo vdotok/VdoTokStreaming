@@ -3,7 +3,7 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "VdoTokStreaming"
-  spec.version      = "1.1.27"
+  spec.version      = "1.1.28"
   spec.summary      = "VdoTokStreaming SDK offers one-to-one calls, many-to-many calls, public and group broadcast calls."
 
  
