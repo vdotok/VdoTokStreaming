@@ -264,6 +264,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreMedia;
 @import ObjectiveC;
 @import SocketRocket;
+@import UIKit;
 @import WebRTC;
 #endif
 
@@ -285,6 +286,24 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
+
+SWIFT_CLASS("_TtC15iOSSDKStreaming18ConfigurationFloat")
+@interface ConfigurationFloat : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSCoder;
+@class NSString;
+@class NSBundle;
+
+SWIFT_CLASS("_TtC15iOSSDKStreaming24FloatingButtonController")
+@interface FloatingButtonController : UIViewController
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (void)loadView;
+- (void)viewDidLayoutSubviews;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
 
 
 
@@ -316,7 +335,6 @@ SWIFT_CLASS("_TtC15iOSSDKStreaming7VTokSDK")
 
 @class SRWebSocket;
 @class NSData;
-@class NSString;
 
 @interface VTokSDK (SWIFT_EXTENSION(iOSSDKStreaming)) <SRWebSocketDelegate>
 - (void)webSocket:(SRWebSocket * _Null_unspecified)webSocket didReceiveMessage:(id _Null_unspecified)message;
